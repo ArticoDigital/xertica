@@ -1,0 +1,14 @@
+<svg width="50px" height="38px" viewBox="0 0 50 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-35.000000, -189.000000)" fill="#4D28A7">
+            <g id="iconmenumodulo" transform="translate(35.000000, 189.000000)">
+                <path d="M46.2,30.2 L16,30.2 C13.9,30.2 12.2,31.9 12.2,34 C12.2,36.1 13.9,37.8 16,37.8 L46.2,37.8 C48.3,37.8 50,36.1 50,34 C50,31.9 48.3,30.2 46.2,30.2 Z" id="Path"></path>
+                <path d="M46.2,15.2 L16,15.2 C13.9,15.2 12.2,16.9 12.2,19 C12.2,21.1 13.9,22.8 16,22.8 L46.2,22.8 C48.3,22.8 50,21.1 50,19 C50,16.9 48.3,15.2 46.2,15.2 Z" id="Path"></path>
+                <path d="M16,7.7 L46.2,7.7 C48.3,7.7 50,6 50,3.9 C50,1.8 48.3,0.1 46.2,0.1 L16,0.1 C13.9,0.1 12.2,1.8 12.2,3.9 C12.3,6 14,7.7 16,7.7 Z" id="Path"></path>
+                <circle id="Oval" cx="3.8" cy="4" r="3.8"></circle>
+                <circle id="Oval" cx="3.8" cy="19" r="3.8"></circle>
+                <circle id="Oval" cx="3.8" cy="34" r="3.8"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

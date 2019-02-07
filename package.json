@@ -84,6 +84,7 @@
     "dploy": "^1.2.0",
     "enquirer": "^2.2.0",
     "figlet": "^1.2.1",
+    "inuit-css": "^2.0.5",
     "jquery": "^3.3.1",
     "node-scorm-packager": "0.0.9",
     "normalize.css": "^8.0.1",

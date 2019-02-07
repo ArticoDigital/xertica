@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #42CECC;
+  --secondary-color: #EBD92E;
+  --link-color: #767676;
+  --fontPrimary--color: #000;
+  --lightGrey-color: #828282;
+  --darkGrey-color: #7C7C7C;
+  --dark-color: #1E1E1E;
+  --active-color: #EC008C;
+  --grid-maxWidth: 1120px;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 36rem) {
+      @content
+    }
+  } @else if $breakpoint == "medium" {
+    @media (min-width: 45rem) {
+      @content
+    }
+  } @else if $breakpoint == "large" {
+    @media (min-width: 1025px) {
+      @content
+    }
+  }
+}

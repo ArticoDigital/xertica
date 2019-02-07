@@ -1,0 +1,39 @@
+.Header {
+  background: var(--primary-color);
+  max-height: 7rem;
+
+  figure {
+    padding: 2rem 0;
+    margin: 0 2rem;
+    position: relative;
+
+    &:nth-child(2) {
+      padding: 0;
+
+      img {
+        background: #ffffff;
+        padding: 1rem 3rem;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 8.6rem solid #ffffff00;
+        border-right: 8.6rem solid #e02c2c00;
+        border-top: .8rem solid #ffffff;
+        top: 100%;
+      }
+    }
+  }
+
+  &-banner {
+    img {
+      display: block;
+      width: 100vw;
+      max-height: 40rem;
+      object-fit: cover;
+    }
+  }
+}

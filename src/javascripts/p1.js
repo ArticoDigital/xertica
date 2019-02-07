@@ -1,6 +1,6 @@
-export { data };
+export { course };
 
-const data = {
+const course = {
   0: {
     name: 'gmail',
     videos: {
@@ -18,5 +18,5 @@ const data = {
       },
     }
   },
-
+  1: {}
 };

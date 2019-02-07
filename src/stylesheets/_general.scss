@@ -1,0 +1,35 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.middle-items {
+  align-items: center;
+}
+
+.back-primary {
+  background: var(--primary-color);
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+.color-white {
+  color: white;
+}
+
+.is-invalid {
+  font-size: 1.4rem;
+  color: var(--error-color);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

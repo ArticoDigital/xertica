@@ -1,3 +1,3 @@
 import {doStart} from './main';
-doStart();
+//doStart();
 

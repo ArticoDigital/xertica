@@ -1,9 +1,18 @@
 import swal from 'sweetalert2';
-import $ from "jquery";
-import {data} from './p1'
+import $ from 'jquery';
+import { course } from './p1';
+
 const debug = true;
 
-let page = 0; //pagina actual en todo el curso
+let progress = {
+  module: {
+    id: 0,
+    page: 0,
+  },
+  sawPercentage: [],
+};
+
+
 let total_pages; //Total de paginas del modulo actual
 let total_pages_general; //Ultima pagina de cada modulo
 let modulo;
@@ -37,22 +46,11 @@ let lastclass = []; //Ultiima clase del estado del cono del menu
 let button_pressed = false;
 
 
-/* Objeto para almacenar la propiedades auxiliares del Suspend_data y el Session_location */
-let progress = { //Objeto para alamcenar el progreso en temas y subtemas
-  theme: 0,
-  subtheme: 0,
-  porcentajecal: 0,
-  visitado: [],
-  posevaluaciones: ['m2-1-1', 'm2-4-1', 'm2-4-2', 'm2-7-1', 'm2-7-2', 'm3-2-1', 'm3-6-1', 'm3-6-2', 'm3-6-3'],
-  calificaciones: [],
-  posicionactualmodulo: [1, 3, 6, 10],
-  pages_visited: []
-};
+document.querySelector('#nextSlide')
+  .addEventListener('click', next);
 
-document.querySelector('#nextSlide').addEventListener('click', next);
-
-function next(e){
-  e.preventDefault()
+function next(e) {
+  e.preventDefault();
 
 }
 
@@ -79,7 +77,6 @@ function getJson(pagemodule) { //Para obtener la estructura y menus de cada modu
 }
 
 
-
 function openmenu() {
   $('.menu')
     .animate({
@@ -104,16 +101,18 @@ function closemenu() {
 }
 
 
-
 function goToPage(currentPage) {
+  const numberApps = Object.keys(course);
+  numberApps.forEach(function (e) {
+    progress.sawPercentage[e] = 0;
+  });
 
-
-  console.log(data);
-  console.log(document.querySelector('.content1'));
-  document.querySelector('.content1').innerHTML = data[0].videos[1].name;
-  document.querySelector('#Video').setAttribute('src','https://drive.google.com/file/d/1CWurOZKJ110C04O1UU57yBrbD5ofD0ij/preview');
-
-
+  console.log(progress.sawPercentage);
+  document.querySelector('.content1').innerHTML = course[0].videos[1].name;
+  document.querySelector('#Video')
+    .setAttribute('src', 'https://drive.google.com/file/d/1CWurOZKJ110C04O1UU57yBrbD5ofD0ij/preview');
+  ;
+  console.log();
 
   //suspend_data_visited[currentPage]=1;
   let igp = currentPage;
@@ -134,16 +133,14 @@ function evaluacion_arraypos_eval(pagina) {
 }
 
 
-
-
 function doStart() {
- let  startTimeStamp = new Date();
+  let startTimeStamp = new Date();
   if (debug) {
     page = 0;
+
+
     fn_first_suspend_data();
     suspend_data_to_arrays();
-
-
     goToPage(page);
 
   } else {
@@ -742,33 +739,40 @@ function ConvertMilliSecondsIntoSCORM2004Time(intTotalMilliseconds) {
 
   return ScormTime;
 }
+
 function behaviorscero() {
   //var citrus = fruits.slice(2, 4);
 
   //Ocultar header y footer en la página 0
-  $('header').hide();
-  $('footer').hide();
-  $("#menuitems").empty();
+  $('header')
+    .hide();
+  $('footer')
+    .hide();
+  $('#menuitems')
+    .empty();
 
   //Estilos para la página 0
-  $( "body" ).addClass( "pagina-0" );
+  $('body')
+    .addClass('pagina-0');
 
 
-  $('.menuppal .botonmenuppal').on('click', function(e){
-    e.preventDefault();
-    modulo = $(this).data('page');
-    //progress.theme = page;
-    getJson(modulo);
+  $('.menuppal .botonmenuppal')
+    .on('click', function (e) {
+      e.preventDefault();
+      modulo = $(this)
+        .data('page');
+      //progress.theme = page;
+      getJson(modulo);
 
 
-    if(posmenuinicial[page]<progress.posicionactualmodulo[page]){
-      page=progress.posicionactualmodulo[modulo];
-      goToPage(page);
-    }else{
-      page=posmenuinicial[modulo];
-      goToPage(page);
-    }
-  });
+      if (posmenuinicial[page] < progress.posicionactualmodulo[page]) {
+        page = progress.posicionactualmodulo[modulo];
+        goToPage(page);
+      } else {
+        page = posmenuinicial[modulo];
+        goToPage(page);
+      }
+    });
 
 
 }
@@ -776,39 +780,44 @@ function behaviorscero() {
 function behaviorsgral() {
 
   //Quitar estilos de la página 0
-  $( "body" ).removeClass( "pagina-0" );
+  $('body')
+    .removeClass('pagina-0');
 
   //Mostrar header y footer en las páginas diferentes a la 0
-  $('header').show();
-  $('footer').show();
+  $('header')
+    .show();
+  $('footer')
+    .show();
 }
 
 
+function menubehave() {
 
-function menubehave(){
+  $('.menu ul li a')
+    .on('click', function (e) {
 
-  $('.menu ul li a').on('click', function(e){
+      e.preventDefault();
 
-    e.preventDefault();
+      closemenu();
 
-    closemenu();
+      page = $(this)
+        .data('page');
+      //$('#page_' + page).css('display','block');
+      goToPage(page);
 
-    page = $(this).data('page');
-    //$('#page_' + page).css('display','block');
-    goToPage(page);
-
-    //$('.advance_bar').width((page/total_pagers_bar)*100 + '%');
-
-
-    //$('.prev_button').removeClass('prev_button_off');
-
-    //$('.next_button').removeClass('next_button_off');
+      //$('.advance_bar').width((page/total_pagers_bar)*100 + '%');
 
 
-    document.location.hash = "pagina_" + page;
+      //$('.prev_button').removeClass('prev_button_off');
 
-  });
+      //$('.next_button').removeClass('next_button_off');
+
+
+      document.location.hash = 'pagina_' + page;
+
+    });
 }
+
 export { doStart };
 
 
