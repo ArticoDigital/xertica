@@ -21,6 +21,7 @@ input:focus {
 .color-primary {
   color: var(--primary-color);
 }
+
 .color-white {
   color: white;
 }
@@ -32,4 +33,12 @@ input:focus {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.padding-large {
+  padding: 0;
+
+  @include respond-to (medium) {
+    padding: 4rem;
+  }
 }

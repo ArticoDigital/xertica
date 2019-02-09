@@ -11,18 +11,18 @@
       padding: 0;
 
       img {
-        background: #ffffff;
+        background: #fff;
         padding: 1rem 3rem;
       }
 
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         width: 0;
         height: 0;
-        border-left: 8.6rem solid #ffffff00;
+        border-left: 8.6rem solid #fff0;
         border-right: 8.6rem solid #e02c2c00;
-        border-top: .8rem solid #ffffff;
+        border-top: 0.8rem solid #fff;
         top: 100%;
       }
     }

@@ -1,27 +1,42 @@
 :root {
-  --primary-color: #42CECC;
-  --secondary-color: #EBD92E;
+  --primary-color: #42cecc;
+  --secondary-color: #ebd92e;
   --link-color: #767676;
   --fontPrimary--color: #000;
   --lightGrey-color: #828282;
-  --darkGrey-color: #7C7C7C;
-  --dark-color: #1E1E1E;
-  --active-color: #EC008C;
+  --darkGrey-color: #7c7c7c;
+  --dark-color: #1e1e1e;
+  --active-color: #ec008c;
   --grid-maxWidth: 1120px;
 }
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "small" {
     @media (min-width: 36rem) {
-      @content
+      @content ;
     }
-  } @else if $breakpoint == "medium" {
+  }
+
+  @else if $breakpoint == "medium" {
     @media (min-width: 45rem) {
-      @content
+      @content ;
     }
-  } @else if $breakpoint == "large" {
+  }
+
+  @else if $breakpoint == "large" {
     @media (min-width: 1025px) {
-      @content
+      @content ;
     }
+  }
+}
+
+$color-1: #3f2da5;
+$color-2: #42cecc;
+
+$steps: 13;
+
+@for $i from 0 to $steps {
+  .gradient-#{$i + 1} {
+    background: mix($color-1, $color-2, percentage($i/($steps - 1)));
   }
 }

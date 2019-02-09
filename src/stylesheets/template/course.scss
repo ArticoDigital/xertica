@@ -1,0 +1,225 @@
+.MenuBar {
+  background: var(--secondary-color);
+  padding: 2rem 0;
+
+  p {
+    line-height: 1;
+    margin: 0 0 0 1rem;
+    display: none;
+
+    @include respond-to (medium) {
+      display: block;
+    }
+  }
+}
+
+.Timeline {
+  padding: 2rem 0;
+  position: relative;
+  margin: 4rem auto;
+
+  &::before {
+    content: '';
+    width: 0.6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #42cecc;
+    height: 100%;
+  }
+
+  &::after {
+    content: '';
+    width: 0.6rem;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 100%;
+    background: #3f2da5;
+  }
+
+  &-content {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.1rem;
+      background: #c5c5c5;
+      top: 50%;
+      z-index: -1;
+    }
+  }
+
+  span {
+    height: 2.4rem;
+    width: 2.4rem;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.active {
+      width: 4rem;
+      height: 4rem;
+      line-height: 4rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: white;
+
+      &::before {
+        content: attr(data-per);
+      }
+    }
+  }
+}
+
+.MenuCourse {
+  figure {
+    margin: 5rem 0 3rem;
+    width: 50%;
+
+    @include respond-to(medium) {
+      width: 20%;
+    }
+
+    @include respond-to(large) {
+      width: 10%;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+  }
+}
+
+.Course {
+  &-text {
+    margin: 2rem 1rem;
+
+    @include respond-to(medium) {
+      margin: 2rem 6rem;
+    }
+  }
+
+  &-video {
+    align-items: stretch;
+
+    @include respond-to(large) {
+      align-items: center;
+    }
+
+    span {
+      margin: auto;
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      display: none;
+
+      @include respond-to(medium) {
+        display: block;
+      }
+    }
+  }
+
+  &-arrow {
+    background: var(--primary-color);
+    padding: 1rem;
+    line-height: 1;
+    color: white;
+
+    @include respond-to(large) {
+      padding: 4rem 2rem;
+      min-height: 30rem;
+      line-height: 1.4;
+    }
+
+    &Left {
+      @include respond-to(large) {
+        order: -1;
+      }
+    }
+  }
+}
+
+.Nav {
+  position: fixed;
+  background: black;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 100%;
+  will-change: translate;
+  transition: all 0.5s;
+
+  @include respond-to(medium) {
+    max-width: 40rem;
+  }
+
+  &.open {
+    transform: translateX(100vw);
+
+    @include respond-to(medium) {
+      transform: translateX(40rem);
+    }
+  }
+
+  &-container {
+    margin: 2rem;
+
+    @include respond-to(medium) {
+      margin: 4rem;
+    }
+
+    a {
+      color: white;
+      margin: 1rem 0 0;
+    }
+  }
+
+  ul {
+    overflow-y: scroll;
+    max-height: calc(100vh - 120px);
+  }
+
+  &-text {
+    width: 24rem;
+    font-size: 1.3rem;
+  }
+
+  &-linkCollapse {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    a {
+      color: white;
+      margin: 1rem 2rem;
+    }
+  }
+
+  &-number {
+    line-height: 2.8rem;
+    color: black;
+    background: white;
+    border-radius: 50%;
+    text-align: center;
+    height: 2.8rem;
+    width: 2.8rem;
+    margin-right: 1rem;
+  }
+
+  &-border {
+    border-bottom: 0.1rem dashed white;
+    padding: 0 0 1rem;
+  }
+
+  &-arrow {
+    margin: 0 1rem;
+    font-size: 3rem;
+  }
+}

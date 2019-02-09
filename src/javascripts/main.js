@@ -46,8 +46,7 @@ let lastclass = []; //Ultiima clase del estado del cono del menu
 let button_pressed = false;
 
 
-document.querySelector('#nextSlide')
-  .addEventListener('click', next);
+document.querySelector('#nextSlide').addEventListener('click', next);
 
 function next(e) {
   e.preventDefault();
