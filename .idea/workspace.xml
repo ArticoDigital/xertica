@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062351e3-0fbd-4df3-808d-62012c8315d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stylesheets/template/course.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/course.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stylesheets/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/template/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/template/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/template/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/template/header.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,10 +32,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/template/course.scss">
+        <entry file="file://$PROJECT_DIR$/src/stylesheets/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="162" column="3" selection-start-line="162" selection-start-column="3" selection-end-line="162" selection-end-column="3" />
+            <state relative-caret-position="245">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -89,10 +77,10 @@
       <find>Course-arrowRight</find>
       <find>Course</find>
       <find>span</find>
-      <find>MenuBar</find>
       <find>coll</find>
       <find>.</find>
       <find>menu</find>
+      <find>MenuBar</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -116,22 +104,22 @@
         <option value="$PROJECT_DIR$/src/images/iconavanzado.svg" />
         <option value="$PROJECT_DIR$/src/images/menu-white.svg" />
         <option value="$PROJECT_DIR$/src/images/menu.svg" />
-        <option value="$PROJECT_DIR$/src/stylesheets/_general.scss" />
         <option value="$PROJECT_DIR$/src/stylesheets/template/footer.scss" />
         <option value="$PROJECT_DIR$/src/stylesheets/template/header.scss" />
         <option value="$PROJECT_DIR$/config/webpack.plugins.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/404.html" />
         <option value="$PROJECT_DIR$/src/stylesheets/styles.scss" />
         <option value="$PROJECT_DIR$/src/javascripts/main.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/_variables.scss" />
-        <option value="$PROJECT_DIR$/src/course.html" />
         <option value="$PROJECT_DIR$/src/javascripts/scripts.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/template/course.scss" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/course.html" />
+        <option value="$PROJECT_DIR$/src/stylesheets/_general.scss" />
       </list>
     </option>
   </component>
@@ -298,12 +286,12 @@
       <workItem from="1549254267657" duration="48000" />
       <workItem from="1549506036041" duration="8976000" />
       <workItem from="1549553049154" duration="8338000" />
-      <workItem from="1549652079330" duration="15142000" />
+      <workItem from="1549652079330" duration="16041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47133000" />
+    <option name="totallyTimeSpent" value="48032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -321,7 +309,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32889733" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32889733" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Database" order="0" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -430,13 +418,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/images/icons/home/iconsites.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/_general.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylesheets/template/footer.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -573,20 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/sass/lib/sass.jar!/org/jetbrains/plugins/sass/stdlib/sass_functions.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -611,16 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -633,8 +590,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylesheets/template/course.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="162" column="3" selection-start-line="162" selection-start-column="3" selection-end-line="162" selection-end-column="3" />
+        <state relative-caret-position="416">
+          <caret line="168" column="3" lean-forward="true" selection-start-line="168" selection-start-column="3" selection-end-line="168" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="6" column="145" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/_general.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
