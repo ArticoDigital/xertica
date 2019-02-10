@@ -32,9 +32,13 @@ export default class {
     _self.generatetemplate.menuVideos();
     links.forEach(function (item) {
       item.addEventListener('click', function () {
-        _self.generatetemplate.loadTemplate();
+        const idVideo = item.dataset.idvideo;
+        State.setLastAppIndex(idVideo);
+        _self.generatetemplate.loadTemplate(idVideo);
+        const links = generateMenuVideos();
+        _self.clickLinkVideos(links, _self);
+        _self.generatetemplate.menuVideos();
 
-        //item.addEventListener('click', this.loadTemplateVideo.bind(this, key));
       });
     });
 

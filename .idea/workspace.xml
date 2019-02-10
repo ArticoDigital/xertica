@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062351e3-0fbd-4df3-808d-62012c8315d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/GenerateTemplate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/State.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/generateMenuApps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/generateMenuVideos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javascripts/templates/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/templates/course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/p1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/data/courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascripts/scorm/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/scorm/Main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="641">
+              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -66,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gotos</find>
       <find>got</find>
       <find>goto</find>
       <find>consol</find>
@@ -96,6 +81,7 @@
       <find>menu</find>
       <find>generateMenuVideos</find>
       <find>generat</find>
+      <find>menuVideos</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -332,12 +318,12 @@
       <workItem from="1549506036041" duration="8976000" />
       <workItem from="1549553049154" duration="8338000" />
       <workItem from="1549652079330" duration="16124000" />
-      <workItem from="1549718114397" duration="41281000" />
+      <workItem from="1549718114397" duration="42877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89396000" />
+    <option name="totallyTimeSpent" value="90992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -346,7 +332,7 @@
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3016055" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3016055" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,13 +341,13 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3298479" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32889733" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32798165" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Database" order="0" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="4" sideWeight="0.495564" visible="true" weight="0.26805556" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="4" sideWeight="0.495564" weight="0.26805556" />
       <window_info anchor="right" id="npm" order="5" sideWeight="0.504436" side_tool="true" weight="0.20104167" />
       <window_info anchor="right" id="Favorites" order="6" sideWeight="0.5004831" side_tool="true" weight="0.20104167" />
     </layout>
@@ -708,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/generateMenuVideos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="801">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -718,7 +704,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/GenerateTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="171">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="12" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -728,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state relative-caret-position="641">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
