@@ -1,10 +1,21 @@
 import State from './State';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
+import { ScormProcessInitialize, ScormProcessGetValue, ScormProcessSetValue, ScormProcessCommit } from './ScormFunction';
 
 export default class {
 
   constructor() {
+
+    ScormProcessInitialize();
+
+    console.log(ScormProcessGetValue('cmi.completion_status', true));
+    console.log(ScormProcessSetValue("cmi.completion_status", "incomplete"));
+    console.log(ScormProcessGetValue("cmi.suspend_data", false));
+    console.log(ScormProcessSetValue("cmi.suspend_data", 'algo'));
+
+    console.log(ScormProcessCommit());
+
 
     State.setTemplate(document.getElementById('MainContainer'));
     this.generatetemplate = State.getGenerateTemplate();
@@ -33,7 +44,7 @@ export default class {
     links.forEach(function (item) {
       item.addEventListener('click', function () {
         const idVideo = item.dataset.idvideo;
-        State.setLastAppIndex(idVideo);
+        State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
         _self.clickLinkVideos(links, _self);

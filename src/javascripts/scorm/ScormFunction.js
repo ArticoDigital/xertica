@@ -13,10 +13,6 @@ let terminateCalled = false;
 
 let initialized = false;
 
-export {
-  ScanForAPI,GetAPI, ScormProcessInitialize, ScormProcessTerminate,ScormProcessGetValue,ScormProcessSetValue,
-  ScormProcessCommit,
-}
 
 function ScanForAPI(win) {
   while ((win.API_1484_11 == null) && (win.parent != null)
@@ -155,4 +151,9 @@ function ScormProcessCommit(){
     alert("Error - No se logró invocar Commit.\n\n" + errorDescription);
     return;
   }
+}
+
+export {
+  ScanForAPI, GetAPI, ScormProcessInitialize, ScormProcessTerminate,ScormProcessGetValue,ScormProcessSetValue,
+  ScormProcessCommit,
 }
