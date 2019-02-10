@@ -1,19 +1,7 @@
 //import { doStart } from './main';
 //doStart();
 
+import Scorm from './scorm/main';
 
-const Menu = document.getElementById('Menu'),
-  MenuButton = document.getElementById('MenuButton'),
-  MenuButtonCollapse = document.getElementById('MenuButtonCollapse');
+new Scorm();
 
-if (Menu) {
-  MenuButton.addEventListener('click', function (e) {
-    console.log('asdasd');
-    e.preventDefault();
-    Menu.classList.add('open');
-  });
-  MenuButtonCollapse.addEventListener('click', function (e) {
-    e.preventDefault();
-    Menu.classList.remove('open');
-  });
-}

@@ -25,9 +25,6 @@ module.exports = {
     open: true,
     port: config.port,
     host: config.dev_host,
-    writeToDisk: (filePath) => {
-      return /superman\.css$/.test(filePath);
-    }
   },
   module: {
     rules: loaders,

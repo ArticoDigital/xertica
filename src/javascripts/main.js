@@ -1,6 +1,6 @@
 import swal from 'sweetalert2';
 import $ from 'jquery';
-import { course } from './p1';
+import { course } from './data/p1';
 
 const debug = true;
 

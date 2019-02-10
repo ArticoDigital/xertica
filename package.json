@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "@didask/scol-r": "^0.1.5",
+    "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
     "dploy": "^1.2.0",
