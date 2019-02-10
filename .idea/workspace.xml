@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062351e3-0fbd-4df3-808d-62012c8315d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/javascripts/scorm/ScormFunction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javascripts/scorm/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/scorm/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascripts/scormfunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascripts/scormfunction.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="456">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -285,8 +282,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:dist" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build:dist" />
         <item itemvalue="npm.lint:js" />
         <item itemvalue="npm.start:dist" />
         <item itemvalue="npm.deploy" />
@@ -309,16 +306,15 @@
       <workItem from="1549553049154" duration="8338000" />
       <workItem from="1549652079330" duration="16124000" />
       <workItem from="1549718114397" duration="44169000" />
-      <workItem from="1549837262794" duration="1121000" />
+      <workItem from="1549837262794" duration="1914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93405000" />
+    <option name="totallyTimeSpent" value="94198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -332,14 +328,14 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3298479" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32794678" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32794678" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Database" order="0" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="4" sideWeight="0.49429658" visible="true" weight="0.26770833" />
-      <window_info anchor="right" id="npm" order="5" sideWeight="0.50570345" side_tool="true" visible="true" weight="0.26770833" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="4" sideWeight="0.4936351" visible="true" weight="0.26770833" />
+      <window_info anchor="right" id="npm" order="5" sideWeight="0.50636494" side_tool="true" visible="true" weight="0.26770833" />
       <window_info anchor="right" id="Favorites" order="6" sideWeight="0.5004831" side_tool="true" weight="0.20104167" />
     </layout>
   </component>
@@ -694,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="456">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
