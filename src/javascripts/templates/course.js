@@ -10,20 +10,7 @@ export default "<section class=\"MenuBar\">\n" +
 "    </div>\n" +
 "</section>\n" +
 "<section class=\"Timeline container\">\n" +
-"    <div class=\"Timeline-content row justify-around middle-items\">\n" +
-"        <span class=\"gradient-1\" data-per=\"7%\"></span>\n" +
-"        <span class=\"gradient-2\" data-per=\"15%\"></span>\n" +
-"        <span class=\"gradient-3\" data-per=\"23%\"></span>\n" +
-"        <span class=\"gradient-4\" data-per=\"31%\"></span>\n" +
-"        <span class=\"gradient-5 active\" data-per=\"38%\"></span>\n" +
-"        <span class=\"gradient-6\" data-per=\"45%\"></span>\n" +
-"        <span class=\"gradient-7\" data-per=\"53%\"></span>\n" +
-"        <span class=\"gradient-8\" data-per=\"60%\"></span>\n" +
-"        <span class=\"gradient-9\" data-per=\"68%\"></span>\n" +
-"        <span class=\"gradient-10\" data-per=\"76%\"></span>\n" +
-"        <span class=\"gradient-11\" data-per=\"84%\"></span>\n" +
-"        <span class=\"gradient-12\" data-per=\"92%\"></span>\n" +
-"        <span class=\"gradient-13\" data-per=\"100%\"></span>\n" +
+"    <div id=\"PercentageUI\" class=\"Timeline-content row justify-around middle-items\">\n" +
 "    </div>\n" +
 "</section>\n" +
 "\n" +

@@ -1,6 +1,7 @@
 import State from './State';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
+import generatePercentage from './generatePercentage';
 import {
   ScormProcessInitialize,
   ScormProcessGetValue,
@@ -39,6 +40,7 @@ export default class {
         State.setLastAppIndex(idApp);
         _self.generatetemplate.loadTemplate(idApp);
         const links = generateMenuVideos();
+        let percentage= generatePercentage();
         _self.clickLinkVideos(links, _self);
       });
     });
@@ -50,7 +52,6 @@ export default class {
       item.addEventListener('click', function () {
         const idVideo = item.dataset.idvideo,
           links = generateMenuVideos();
-
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         _self.clickLinkVideos(links, _self);

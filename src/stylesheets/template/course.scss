@@ -74,6 +74,12 @@
   }
 }
 
+#MenuIcons {
+  figure {
+    padding: 10px 30px;
+  }
+}
+
 .MenuCourse {
   figure {
     margin: 5rem 0 3rem;
@@ -182,7 +188,7 @@
   }
 
   ul {
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: calc(100vh - 120px);
   }
 

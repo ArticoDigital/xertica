@@ -16,6 +16,6 @@ export default  "\n" +
   "        <img src=\"../../images/video.png\" alt=\"\">\n" +
   "    </article>\n" +
   "</section>\n" +
-  "<section class=\"row justify-between container m-t-40\" id=\"MenuIcons\">\n" +
+  "<section class=\"row justify-center container m-t-40\" id=\"MenuIcons\">\n" +
   "\n" +
   "</section>\n"
