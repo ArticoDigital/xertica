@@ -6,7 +6,7 @@ import { ScormProcessInitialize, ScormProcessGetValue, ScormProcessSetValue, Sco
 export default class {
 
   constructor() {
-
+/*
     ScormProcessInitialize();
 
     console.log(ScormProcessGetValue('cmi.completion_status', true));
@@ -15,7 +15,7 @@ export default class {
     console.log(ScormProcessSetValue("cmi.suspend_data", 'algo'));
 
     console.log(ScormProcessCommit());
-
+*/
 
     State.setTemplate(document.getElementById('MainContainer'));
     this.generatetemplate = State.getGenerateTemplate();
