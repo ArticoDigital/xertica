@@ -1,5 +1,6 @@
 ## Project
 dist/*
+/.idea
 
 ## Node.js
 lib-cov

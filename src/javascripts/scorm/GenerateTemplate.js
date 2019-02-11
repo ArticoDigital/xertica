@@ -1,5 +1,6 @@
 import mainTemplate from '../templates/main';
 import courseTemplate from '../templates/course';
+import generateDomVideos from './generateDomVideos';
 
 
 export default class {
@@ -9,22 +10,32 @@ export default class {
   }
 
   loadTemplate(page = null) {
-
     if (page) {
       this.el.innerHTML = courseTemplate;
-      return 'video';
+      this.addElementsCourse();
+      return;
     }
     this.el.innerHTML = mainTemplate;
-    return 'apps';
+    this.addElementsMain();
   }
 
-  menuVideos(){
+  addElementsCourse() {
+    generateDomVideos();
+  }
+
+  addElementsMain() {
+
+  }
+
+  menuVideos() {
     const Menu = document.getElementById('Menu'),
       MenuButton = document.getElementById('MenuButton'),
       MenuButtonCollapse = document.getElementById('MenuButtonCollapse');
 
     MenuButton.addEventListener('click', function () {
-      document.getElementById('Menu').classList.add('open');
+      document.getElementById('Menu')
+        .classList
+        .add('open');
     });
 
     MenuButtonCollapse.addEventListener('click', function (e) {

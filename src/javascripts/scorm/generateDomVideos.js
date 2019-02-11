@@ -1,24 +1,32 @@
+import State from './State';
 import courses from '../data/courses';
 
+const app = State.getLastAppIndex(),
+  page = State.getLastPageIndex(),
+  course = courses[app].videos[page];
+
 export default function () {
-  const MenuIcons = document.getElementById('MenuIcons');
-  let links = [];
-  for (let key in courses) {
-    let Figure = document.createElement('figure'),
-      Link = document.createElement('a'),
-      Image = document.createElement('img');
-    Image.setAttribute('src', courses[key].icon);
-    Link.setAttribute('data-idapp', key);
-    Link.setAttribute('class', 'linkApp');
-    Link.setAttribute('href', '#');
-    Link.appendChild(Image);
-    Figure.appendChild(Link);
-    MenuIcons.appendChild(Figure);
-    links.push(Link);
+
+  if (courses[app].videos[page + 1]) {
+    console.log(courses[app].videos[page + 1]);
   }
 
-  return links;
+  document.getElementById('Course-title').innerText = course.name;
+  document.getElementById('Course-back').innerText = courseBack();
+  document.getElementById('Course-after').innerText = courseAfter();
+  document.getElementById('Course-video')
+    .setAttribute('href', course.src);
+  document.getElementById('Course-content').innerHTML = course.content;
+
 }
 
+function courseBack() {
+  return (courses[app].videos[page - 1]) ? console.log(courses[app].videos[page - 1]) : '';
+}
+
+function courseAfter() {
+  return (courses[app].videos[page + 1]) ? console.log(courses[app].videos[page + 1]) : '';
+
+}
 
 

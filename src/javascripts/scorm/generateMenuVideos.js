@@ -18,6 +18,7 @@ export default function () {
 
     Li.setAttribute('class', 'row middle-items');
     Link.setAttribute('class', 'row middle-items');
+    Link.setAttribute('href', '#');
     Div.setAttribute('class', 'row Nav-border middle-items');
 
     Span.setAttribute('class', 'Nav-number');

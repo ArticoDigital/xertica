@@ -18,6 +18,8 @@ export default class {
     */
 
     State.setTemplate(document.getElementById('MainContainer'));
+    State.setLastPageIndex(0);
+
     this.generatetemplate = State.getGenerateTemplate();
     this.generatetemplate.loadTemplate();
 
@@ -29,7 +31,8 @@ export default class {
   clickLinkApp(links) {
     const _self = this;
     links.forEach(function (item) {
-      item.addEventListener('click', function () {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
         const idApp = item.dataset.idapp;
         State.setLastAppIndex(idApp);
         _self.generatetemplate.loadTemplate(idApp);
@@ -42,7 +45,8 @@ export default class {
   clickLinkVideos(links, _self) {
     _self.generatetemplate.menuVideos();
     links.forEach(function (item) {
-      item.addEventListener('click', function () {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
         const idVideo = item.dataset.idvideo;
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
