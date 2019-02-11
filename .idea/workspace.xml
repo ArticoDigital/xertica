@@ -32,10 +32,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="636">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#1437#1722#0" />
               </folding>
             </state>
           </provider>
@@ -88,7 +88,6 @@
       <replace>let</replace>
       <replace>gradient-</replace>
       <replace>0.</replace>
-      <replace>let</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist</dir>
@@ -311,10 +310,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94198000" />
+    <option name="totallyTimeSpent" value="94211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -690,10 +690,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascripts/scorm/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="636">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#1437#1722#0" />
           </folding>
         </state>
       </provider>

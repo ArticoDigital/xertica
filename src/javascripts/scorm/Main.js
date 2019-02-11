@@ -1,12 +1,7 @@
 import State from './State';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
-import {
-  ScormProcessInitialize,
-  ScormProcessGetValue,
-  ScormProcessSetValue,
-  ScormProcessCommit
-} from './ScormFunction';
+import { ScormProcessInitialize, ScormProcessGetValue, ScormProcessSetValue, ScormProcessCommit } from './ScormFunction';
 
 export default class {
 
@@ -21,7 +16,6 @@ export default class {
 
         console.log(ScormProcessCommit());
     */
-
 
     State.setTemplate(document.getElementById('MainContainer'));
     this.generatetemplate = State.getGenerateTemplate();
@@ -49,13 +43,13 @@ export default class {
     _self.generatetemplate.menuVideos();
     links.forEach(function (item) {
       item.addEventListener('click', function () {
-        const idVideo = item.dataset.idvideo,
-          links = generateMenuVideos();
-
+        const idVideo = item.dataset.idvideo;
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
+        const links = generateMenuVideos();
         _self.clickLinkVideos(links, _self);
         _self.generatetemplate.menuVideos();
+
       });
     });
 
