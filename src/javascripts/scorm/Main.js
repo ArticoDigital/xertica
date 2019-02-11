@@ -57,7 +57,6 @@ export default class {
       item.addEventListener('click', function (e) {
         e.preventDefault();
         const idVideo = item.dataset.idvideo;
-        links = generateMenuVideos();
 
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);

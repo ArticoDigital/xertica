@@ -7,7 +7,7 @@ export default function () {
   //const PagesVisited = State[State.getLastAppIndex()].visitedpages;
   let size = Object.keys(Pages).length;
   let percetageperpage=parseInt(100/size,10);
-    PercentageUI = document.getElementById('PercentageUI');
+  const  PercentageUI = document.getElementById('PercentageUI');
  // let actualpercentage = PagesVisited*percetageperpage;
   let PagesVisited = 40;
   for (let key in Pages) {
@@ -21,7 +21,7 @@ export default function () {
     //}
     Span.setAttribute('data-per', percetageperpage*mult+"%");
     PercentageUI.appendChild(Span);
-    
+
   }
 
   return PagesVisited;
