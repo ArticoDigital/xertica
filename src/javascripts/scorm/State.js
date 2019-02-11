@@ -20,6 +20,23 @@ export default class {
     }
   }
 
+  static stateToString(){
+    const _progress = {
+      pagesApp: this.pagesApp,
+      currentApp: this.currentApp
+    }
+     return JSON.stringify(_progress);
+  }
+  
+
+  static stringToState(progressString){
+    const _progress = JSON.parse(progressString); 
+    this.pagesApp = _progress.pagesApp;
+    this.currentApp = _progress.currentApp;
+  }
+  
+
+
   static setPagesApp(app, page = 0, lastpage = 0) {
     const _self = this;
     this.currentApp = app;
