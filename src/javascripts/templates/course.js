@@ -15,22 +15,22 @@ export default "<section class=\"MenuBar\">\n" +
 "</section>\n" +
 "\n" +
 "<section class=\"Course container\">\n" +
-"    <h1>3. De carne cerebro lumbering animata</h1>\n" +
+"    <h1 id='Course-title'></h1>\n" +
 "    <div class=\"row Course-video\">\n" +
 "        <div class=\"col-l-10 col-16\">\n" +
-"            <iframe src=\"https://drive.google.com/file/d/1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2/preview\"\n" +
+"            <iframe id='Course-video' src=\"https://drive.google.com/file/d/1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2/preview\"\n" +
 "                    frameborder=\"0\" width=\"100%\" height=\"400px\"></iframe>\n" +
 "        </div>\n" +
 "        <div class=\"col-l-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span><</span>\n" +
-"                <p>¿Cómo configuro la firma en mi Gmail?</p>\n" +
+"                <p id='Course-back'>¿Cómo configuro la firma en mi Gmail?</p>\n" +
 "            </div>\n" +
 "        </div>\n" +
 "        <div class=\"col-l-3  col-8 Course-arrow  row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span> > </span>\n" +
-"                <p>¿Cómo inserto archivos en mi correo electrónico desde Google Drive?</p>\n" +
+"                <p id='Course-after'>¿Cómo inserto archivos en mi correo electrónico desde Google Drive?</p>\n" +
 "            </div>\n" +
 "        </div>\n" +
 "    </div>\n" +
@@ -41,9 +41,7 @@ export default "<section class=\"MenuBar\">\n" +
 "            comedat cerebella viventium.</p>\n" +
 "    </div>\n" +
 "    <div class=\"row justify-center\">\n" +
-"        <figure class=\"col-12\">\n" +
-"            <img src=\"../../images/f.png\" alt=\"\">\n" +
-"        </figure>\n" +
+"        <div id='Course-content' class=\"col-12\"></div>\n" +
 "    </div>\n" +
 "</section>\n" +
 "<section class=\"container row MenuCourse justify-between\">\n" +

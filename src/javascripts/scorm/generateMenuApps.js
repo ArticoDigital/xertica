@@ -10,6 +10,7 @@ export default function () {
     Image.setAttribute('src', courses[key].icon);
     Link.setAttribute('data-idapp', key);
     Link.setAttribute('class', 'linkApp');
+    Link.setAttribute('href', '#');
     Link.appendChild(Image);
     Figure.appendChild(Link);
     MenuIcons.appendChild(Figure);
