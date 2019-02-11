@@ -11,17 +11,18 @@ export default function () {
   document.getElementById('Course-back').innerText = courseBack(app, page);
   document.getElementById('Course-after').innerText = courseAfter(app, page);
   document.getElementById('Course-video')
-    .setAttribute('href', course.src);
+    .setAttribute('src', course.src);
   document.getElementById('Course-content').innerHTML = course.content;
+
 
 }
 
 function courseBack(app, page) {
-  return (courses[app].videos[page - 1]) ? console.log(courses[app].videos[page - 1]) : '';
+  return courses[app].videos[parseInt(page) - 1] ? courses[app].videos[parseInt(page) - 1].name : '';
 }
 
 function courseAfter(app, page) {
-  return (courses[app].videos[page + 1]) ? console.log(courses[app].videos[page + 1]) : '';
+  return courses[app].videos[parseInt(page) + 1] ? courses[app].videos[parseInt(page) + 1].name : '';
 
 }
 
