@@ -190,9 +190,6 @@
   ul {
     overflow-y: auto;
     max-height: calc(100vh - 120px);
-    li {
-      flex-wrap: nowrap;
-    }
   }
 
   &-text {

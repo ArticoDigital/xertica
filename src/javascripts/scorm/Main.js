@@ -1,7 +1,6 @@
 import State from './State';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
-
 import generatePercentage from './generatePercentage';
 import {
   ScormProcessInitialize,
@@ -9,8 +8,6 @@ import {
   ScormProcessSetValue,
   ScormProcessCommit
 } from './ScormFunction';
-
-import { ScormProcessInitialize, ScormProcessGetValue, ScormProcessSetValue, ScormProcessCommit } from './ScormFunction';
 
 
 export default class {
