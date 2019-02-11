@@ -61,6 +61,7 @@ export default class {
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
+        let percentage= generatePercentage();
         _self.clickLinkVideos(links, _self);
         _self.generatetemplate.menuVideos();
 
