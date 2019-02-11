@@ -44,6 +44,7 @@ export default class {
         let percentage = generatePercentage();
         _self.clickLinkVideos(links, _self);
         _self.clickLinkAppCourse();
+        _self.clickArrows();
       });
     });
   }
@@ -58,10 +59,10 @@ export default class {
         State.setPagesApp(State.currentApp, idVideo, idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
-        let percentage= generatePercentage();
         _self.clickLinkVideos(links, _self);
         _self.generatetemplate.menuVideos();
         _self.clickLinkAppCourse();
+        _self.clickArrows();
       });
     });
   }
@@ -82,8 +83,29 @@ export default class {
           const links = generateMenuVideos();
           _self.clickLinkVideos(links, _self);
           _self.clickLinkAppCourse();
+          _self.clickArrows();
         });
       });
+  }
+
+  clickArrows() {
+    const _self = this;
+
+    document.querySelectorAll('.Course-arrow')
+      .forEach(function (item) {
+        item.addEventListener('click', function () {
+          const idVideo = item.dataset.idvideo;
+          State.setPagesApp(State.currentApp, idVideo, idVideo);
+          _self.generatetemplate.loadTemplate(1);
+          _self.generatetemplate.menuVideos();
+          const links = generateMenuVideos();
+          _self.clickLinkVideos(links, _self);
+          _self.clickLinkAppCourse();
+          _self.clickArrows();
+        });
+      });
+
+
   }
 
 }

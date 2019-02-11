@@ -21,6 +21,9 @@ export default class {
 
   addElementsCourse() {
     generateDomVideos();
+
+
+
   }
 
   addElementsMain() {

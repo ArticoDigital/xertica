@@ -19,18 +19,18 @@ export default "<section class=\"MenuBar\">\n" +
 "    <div class=\"row Course-video\">\n" +
 "        <div class=\"col-l-10 col-16\">\n" +
 "            <iframe id='Course-video' src=\"https://drive.google.com/file/d/1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2/preview\"\n" +
-"                    frameborder=\"0\" allowfullscreen width=\"100%\" height=\"400\"></iframe>\n" +
+"                    frameborder=\"0\" width=\"100%\" height=\"400px\"></iframe>\n" +
 "        </div>\n" +
-"        <div class=\"col-l-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
+"        <div id='linkBack' class=\"col-l-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span><</span>\n" +
-"                <p id='Course-back'>¿Cómo configuro la firma en mi Gmail?</p>\n" +
+"                <p id='Course-back'></p>\n" +
 "            </div>\n" +
 "        </div>\n" +
-"        <div class=\"col-l-3  col-8 Course-arrow  row middle-items\">\n" +
+"        <div id='linkAfter' class=\"col-l-3  col-8 Course-arrow  row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span> > </span>\n" +
-"                <p id='Course-after'>¿Cómo inserto archivos en mi correo electrónico desde Google Drive?</p>\n" +
+"                <p id='Course-after'></p>\n" +
 "            </div>\n" +
 "        </div>\n" +
 "    </div>\n" +
