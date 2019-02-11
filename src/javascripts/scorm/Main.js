@@ -22,6 +22,7 @@ export default class {
         console.log(ScormProcessCommit());
     */
 
+
     State.setTemplate(document.getElementById('MainContainer'));
     this.generatetemplate = State.getGenerateTemplate();
     this.generatetemplate.loadTemplate();
