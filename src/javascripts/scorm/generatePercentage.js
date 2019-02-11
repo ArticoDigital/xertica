@@ -3,7 +3,7 @@ import State from './State';
 
 export default function () {
 
-  const Pages = courses[State.getLastAppIndex()].videos;
+  const Pages = courses[State.getLastPageCurrentApp()].videos;
   //const PagesVisited = State[State.getLastAppIndex()].visitedpages;
   let size = Object.keys(Pages).length;
   let percetageperpage=parseInt(100/size,10);

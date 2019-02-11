@@ -3,7 +3,7 @@ import State from './State';
 
 export default function () {
 
-  const Videos = courses[State.getLastAppIndex()].videos,
+  const Videos = courses[State.getCurrentApp()].videos,
     NavUl = document.getElementById('NavUl');
   let links = [];
 
@@ -17,11 +17,23 @@ export default function () {
 
 
     Li.setAttribute('class', 'row middle-items');
-    Link.setAttribute('class', 'row middle-items');
-    Link.setAttribute('href', '#');
-    Div.setAttribute('class', 'row Nav-border middle-items');
 
-    Span.setAttribute('class', 'Nav-number');
+
+    Div.setAttribute('class', 'row Nav-border middle-items');
+    if (State.visitedLink(key)) {
+      Link.setAttribute('class', 'row middle-items visited');
+      Span.setAttribute('class', 'Nav-number visited');
+    } else {
+      Link.setAttribute('class', 'row middle-items');
+      Span.setAttribute('class', 'Nav-number');
+    }
+    Link.setAttribute('href', '#');
+
+
+
+
+
+
     Span.innerText = parseInt(key) + 1;
     Div.appendChild(Span);
 

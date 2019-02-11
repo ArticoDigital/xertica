@@ -46,34 +46,34 @@ export default "<section class=\"MenuBar\">\n" +
 "</section>\n" +
 "<section class=\"container row MenuCourse justify-between\">\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_gmail_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='0'><img src=\"../../images/icons/internal/logo_gmail_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_calendar_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='1'><img src=\"../../images/icons/internal/logo_calendar_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_hangouts_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='2'><img src=\"../../images/icons/internal/logo_hangouts_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_meet_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='3'><img src=\"../../images/icons/internal/logo_meet_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_google_plus_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='4'><img src=\"../../images/icons/internal/logo_google_plus_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_drive_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='5'><img src=\"../../images/icons/internal/logo_drive_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_docs_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='6'><img src=\"../../images/icons/internal/logo_docs_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_sheets_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='7'><img src=\"../../images/icons/internal/logo_sheets_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_slides_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='8'><img src=\"../../images/icons/internal/logo_slides_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "    <figure>\n" +
-"        <a href=\"\"><img src=\"../../images/icons/internal/logo_forms_128px.png\" alt=\"\"></a>\n" +
+"        <a href=\"\" class='Menu-courseLink' data-appid='9'><img src=\"../../images/icons/internal/logo_forms_128px.png\" alt=\"\"></a>\n" +
 "    </figure>\n" +
 "</section>\n" +
 "<div class=\"Nav row justify-center middle-items\" id=\"Menu\">\n" +

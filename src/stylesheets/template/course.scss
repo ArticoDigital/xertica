@@ -74,12 +74,6 @@
   }
 }
 
-#MenuIcons {
-  figure {
-    padding: 10px 30px;
-  }
-}
-
 .MenuCourse {
   figure {
     margin: 5rem 0 3rem;
@@ -188,7 +182,7 @@
   }
 
   ul {
-    overflow-y: auto;
+    overflow-y: scroll;
     max-height: calc(100vh - 120px);
   }
 
@@ -217,6 +211,9 @@
     height: 2.8rem;
     width: 2.8rem;
     margin-right: 1rem;
+    &.visited{
+      background: green;
+    }
   }
 
   &-border {
@@ -227,5 +224,11 @@
   &-arrow {
     margin: 0 1rem;
     font-size: 3rem;
+  }
+}
+
+#NavUl {
+  a.visited {
+    color: green;
   }
 }

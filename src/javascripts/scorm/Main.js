@@ -25,14 +25,11 @@ export default class {
     */
 
     State.setTemplate(document.getElementById('MainContainer'));
-    State.setLastPageIndex(0);
-
+    State.init();
     this.generatetemplate = State.getGenerateTemplate();
     this.generatetemplate.loadTemplate();
-
     const links = generateMenuApps();
     this.clickLinkApp(links);
-
   }
 
   clickLinkApp(links) {
@@ -41,11 +38,12 @@ export default class {
       item.addEventListener('click', function (e) {
         e.preventDefault();
         const idApp = item.dataset.idapp;
-        State.setLastAppIndex(idApp);
+        State.setPagesApp(idApp);
         _self.generatetemplate.loadTemplate(idApp);
         const links = generateMenuVideos();
-        let percentage= generatePercentage();
+        let percentage = generatePercentage();
         _self.clickLinkVideos(links, _self);
+        _self.clickLinkAppCourse();
       });
     });
   }
@@ -57,14 +55,34 @@ export default class {
       item.addEventListener('click', function (e) {
         e.preventDefault();
         const idVideo = item.dataset.idvideo;
-
-        State.setLastPageIndex(idVideo);
+        State.setPagesApp(State.currentApp, idVideo, idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
         _self.clickLinkVideos(links, _self);
         _self.generatetemplate.menuVideos();
-
+        _self.clickLinkAppCourse();
       });
     });
   }
+
+  clickLinkAppCourse() {
+    const _self = this;
+    document.querySelectorAll('.Menu-courseLink')
+      .forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          let idApp = item.dataset.appid;
+
+          State.setCurrentApp(idApp);
+          let lastpage = State.getLastPageCurrentApp();
+          State.setPagesApp(idApp, lastpage, lastpage);
+          _self.generatetemplate.loadTemplate(1);
+          _self.generatetemplate.menuVideos();
+          const links = generateMenuVideos();
+          _self.clickLinkVideos(links, _self);
+          _self.clickLinkAppCourse();
+        });
+      });
+  }
+
 }
