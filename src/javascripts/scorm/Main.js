@@ -1,7 +1,7 @@
 import State from './State';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
-<<<<<<< HEAD
+
 import generatePercentage from './generatePercentage';
 import {
   ScormProcessInitialize,
@@ -9,9 +9,9 @@ import {
   ScormProcessSetValue,
   ScormProcessCommit
 } from './ScormFunction';
-=======
+
 import { ScormProcessInitialize, ScormProcessGetValue, ScormProcessSetValue, ScormProcessCommit } from './ScormFunction';
->>>>>>> 11f477c19dd5fd266f6f1b4d53da56cb8a3b60a1
+
 
 export default class {
 
@@ -56,15 +56,12 @@ export default class {
   clickLinkVideos(links, _self) {
     _self.generatetemplate.menuVideos();
     links.forEach(function (item) {
-<<<<<<< HEAD
-      item.addEventListener('click', function () {
-        const idVideo = item.dataset.idvideo,
-          links = generateMenuVideos();
-=======
+
       item.addEventListener('click', function (e) {
         e.preventDefault();
         const idVideo = item.dataset.idvideo;
->>>>>>> 11f477c19dd5fd266f6f1b4d53da56cb8a3b60a1
+        links = generateMenuVideos();
+
         State.setLastPageIndex(idVideo);
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
