@@ -1,14 +1,16 @@
 export default "<section class=\"MenuBar\">\n" +
 "    <div class=\"container row justify-between middle-items\">\n" +
 "        <figure class=\"row middle-items\">\n" +
-"            <img src=\"../../images/menu.svg\" alt=\"\" id=\"MenuButton\">\n" +
+"            <img src=\"images/menu.svg\" alt=\"\" id=\"MenuButton\">\n" +
 "            <p>Menú del <br> módulo</p>\n" +
 "        </figure>\n" +
-"        <div>\n" +
-"            <p>Gmail</p>\n" +
-"        </div>\n" +
+"        <figure id='TopIcon' class=\"row middle-items\">\n" +
+"            <p id='AppName' class='p-r-20'>Gmail</p>\n" +
+"            <img id='Icon2' class='Icon2' src=\"images/menu.svg\" alt=\"\" >\n" +
+"        </figure>\n" +
 "    </div>\n" +
 "</section>\n" +
+"<div id='MainButton'> <img src=\"images/iconinicio.svg\" alt=\"\" id=\"MenuButton\"></div>"+
 "<section class=\"Timeline container\">\n" +
 "    <div id=\"PercentageUI\" class=\"Timeline-content row justify-around middle-items\">\n" +
 "    </div>\n" +
@@ -17,17 +19,17 @@ export default "<section class=\"MenuBar\">\n" +
 "<section class=\"Course container\">\n" +
 "    <h1 id='Course-title'></h1>\n" +
 "    <div class=\"row Course-video\">\n" +
-"        <div class=\"col-l-10 col-16\">\n" +
+"        <div class=\"col-l-10 col-m-10 col-16\">\n" +
 "            <iframe id='Course-video' src=\"https://drive.google.com/file/d/1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2/preview\"\n" +
 "                    frameborder=\"0\" width=\"100%\" height=\"400px\"></iframe>\n" +
 "        </div>\n" +
-"        <div id='linkBack' class=\"col-l-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
+"        <div id='linkBack' class=\"col-l-3 col-m-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span><</span>\n" +
 "                <p id='Course-back'></p>\n" +
 "            </div>\n" +
 "        </div>\n" +
-"        <div id='linkAfter' class=\"col-l-3  col-8 Course-arrow  row middle-items\">\n" +
+"        <div id='linkAfter' class=\"col-l-3 col-m-3 col-8 Course-arrow  row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +
 "                <span> > </span>\n" +
 "                <p id='Course-after'></p>\n" +
@@ -35,50 +37,17 @@ export default "<section class=\"MenuBar\">\n" +
 "        </div>\n" +
 "    </div>\n" +
 "    <div class=\"Course-text row justify-center\">\n" +
-"        <p class=\"col-12\">Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus\n" +
-"            sit, morbo vel\n" +
-"            maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus\n" +
-"            comedat cerebella viventium.</p>\n" +
+"        <p class=\"col-12\">A continuación encontrarás mas información acerca de este video.</p>\n" +
 "    </div>\n" +
 "    <div class=\"row justify-center\">\n" +
 "        <div id='Course-content' class=\"col-12\"></div>\n" +
 "    </div>\n" +
 "</section>\n" +
-"<section class=\"container row MenuCourse justify-between\">\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='0'><img src=\"../../images/icons/internal/logo_gmail_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='1'><img src=\"../../images/icons/internal/logo_calendar_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='2'><img src=\"../../images/icons/internal/logo_hangouts_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='3'><img src=\"../../images/icons/internal/logo_meet_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='4'><img src=\"../../images/icons/internal/logo_google_plus_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='5'><img src=\"../../images/icons/internal/logo_drive_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='6'><img src=\"../../images/icons/internal/logo_docs_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='7'><img src=\"../../images/icons/internal/logo_sheets_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='8'><img src=\"../../images/icons/internal/logo_slides_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
-"    <figure>\n" +
-"        <a href=\"\" class='Menu-courseLink' data-appid='9'><img src=\"../../images/icons/internal/logo_forms_128px.png\" alt=\"\"></a>\n" +
-"    </figure>\n" +
+"<section id='MenuCourseInPage' class=\"container row MenuCourse justify-between\">\n" +
 "</section>\n" +
 "<div class=\"Nav row justify-center middle-items\" id=\"Menu\">\n" +
 "    <div class=\"row justify-end Nav-linkCollapse\">\n" +
-"        <a href=\"\" id=\"MenuButtonCollapse\"> < Colapsar menú </a>\n" +
+"        <a href=\"\" id=\"MenuButtonCollapse\"> < COLAPSAR MENÚ </a>\n" +
 "    </div>\n" +
 "    <nav class=\"Nav-container\">\n" +
 "        <ul id=\"NavUl\" class=\"is-list-less middle-items\">\n" +

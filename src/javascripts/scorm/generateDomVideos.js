@@ -12,6 +12,9 @@ export default function () {
   const linkBack =  document.getElementById('linkBack');
   const linkAfter =  document.getElementById('linkAfter');
 
+  document.getElementById('AppName').innerText = courses[app].name;
+  document.getElementById('Icon2').setAttribute('src', courses[app].icon2);
+
   if (courses[app].videos[parseInt(page) - 1]) {
 
     linkBack.setAttribute('data-idvideo',parseInt(page) - 1)

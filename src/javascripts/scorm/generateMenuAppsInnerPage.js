@@ -3,21 +3,24 @@ import State from './State';
 
 export default function () {
   let percentage= State.percentageEachApp();
-  const MenuIcons = document.getElementById('MenuIcons');
+  const MenuIcons = document.getElementById('MenuCourseInPage');
   let links = [];
   for (let key in courses) {
     let Figure = document.createElement('figure'),
       Link = document.createElement('a'),
       Image = document.createElement('img'),
+      NameApp = document.createElement('p'),
       PercentageText = document.createElement('span');
-
-    PercentageText.innerText =  percentage[key]+"%";
-    Image.setAttribute('src', courses[key].icon);
-    Link.setAttribute('data-idapp', key);
-    Link.setAttribute('class', 'linkApp');
+    Image.setAttribute('src', courses[key].icon2);
+    Link.setAttribute('data-appid', key);
+    Link.setAttribute('class', 'Menu-courseLink');
     Link.setAttribute('href', '#');
+    NameApp.innerText = courses[key].name;
+    PercentageText.innerText =  percentage[key]+"%";
+    NameApp.setAttribute('class', 'centertext');
     Link.appendChild(Image);
     Figure.appendChild(Link);
+    Figure.appendChild(NameApp);
     Figure.appendChild(PercentageText);
     MenuIcons.appendChild(Figure);
     links.push(Link);
@@ -25,6 +28,3 @@ export default function () {
 
   return links;
 }
-
-
-

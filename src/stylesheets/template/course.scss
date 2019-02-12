@@ -2,6 +2,10 @@
   background: var(--secondary-color);
   padding: 2rem 0;
 
+  .Icon2 {
+    max-height: 45px;
+  }
+
   p {
     line-height: 1;
     margin: 0 0 0 1rem;
@@ -11,6 +15,10 @@
       display: block;
     }
   }
+}
+
+.a4qjWd {
+  display: none;
 }
 
 .videocontainer {
@@ -89,17 +97,42 @@
   }
 }
 
+#MenuIcons {
+  figure {
+    padding: 10px 30px;
+    position: relative;
+
+    span {
+      position: absolute;
+      bottom: 64px;
+      background-color: #42cecc;
+      padding: 7px;
+      right: 10px;
+      border-radius: 13px;
+    }
+  }
+}
+
+#MainButton {
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  left: 10px;
+}
+
 .MenuCourse {
   figure {
     margin: 5rem 0 3rem;
-    width: 50%;
+    width: 37%;
+    position: relative;
 
     @include respond-to(medium) {
       width: 20%;
     }
 
     @include respond-to(large) {
-      width: 10%;
+      width: 9%;
     }
   }
 
@@ -107,9 +140,32 @@
     display: block;
     text-align: center;
   }
+
+  .centertext {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  span {
+    position: absolute;
+    bottom: 30px;
+    background-color: #42cecc;
+    padding: 7px;
+    right: 0;
+    border-radius: 13px;
+  }
 }
 
 .Course {
+  h1 {
+    font-size: 2.5rem;
+
+    @include respond-to(medium) {
+      font-size: 4rem;
+    }
+  }
+
   &-text {
     margin: 2rem 1rem;
 
@@ -133,6 +189,7 @@
     p {
       font-size: 1.4rem;
       display: none;
+      font-family: 'Righteous', cursive;
 
       @include respond-to(medium) {
         display: block;
@@ -145,19 +202,31 @@
     padding: 1rem;
     line-height: 1;
     color: white;
+    cursor: pointer;
 
     @include respond-to(large) {
       padding: 4rem 2rem;
       min-height: 30rem;
       line-height: 1.4;
+      cursor: pointer;
     }
 
     &Left {
-      @include respond-to(large) {
+      @include respond-to(medium) {
         order: -1;
       }
     }
   }
+}
+
+#Course-back {
+  text-align: right;
+}
+
+.intruction {
+  background: #f0f0f0;
+  border-left: 5px solid var(--primary-color);
+  font-size: 15px;
 }
 
 .Nav {

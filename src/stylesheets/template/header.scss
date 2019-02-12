@@ -35,5 +35,34 @@
       max-height: 40rem;
       object-fit: cover;
     }
+
+    p {
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      font-family: 'Righteous', cursive;
+      font-size: 3rem;
+      color: white;
+      width: 95%;
+      line-height: 1em;
+
+      @include respond-to(medium) {
+        font-size: 5rem;
+        width: 50%;
+      }
+
+      @include respond-to(large) {
+        font-size: 7rem;
+        width: 35%;
+      }
+    }
+  }
+}
+
+.hide-600 {
+  display: none;
+
+  @include respond-to(small) {
+    display: block;
   }
 }

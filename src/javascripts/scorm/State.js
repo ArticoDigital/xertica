@@ -42,8 +42,10 @@ export default class {
     this.currentApp = app;
     this.pagesApp.map(function (apps) {
       if (apps.app == app) {
-        apps.pages.push(parseInt(page));
-        apps.lastPage = parseInt(lastpage);
+        if(!apps.pages.includes(parseInt(page))){
+            apps.pages.push(parseInt(page));
+          }
+          apps.lastPage = parseInt(lastpage);
       }
     });
 
@@ -87,6 +89,39 @@ export default class {
       return apps.app == currentApp;
     });
     return app.pages.includes(parseInt(id));
+  }
+
+  static getPagesVisited() {
+    const currentApp = this.currentApp;
+    const app = this.pagesApp.find(function (apps) {
+      return apps.app == currentApp;
+    });
+    return app.pages.length;
+  }
+
+  static isFinishedCourse() {
+    
+    //const Videos = courses[State.getCurrentApp()].videos;
+    for (let key in  courses) {
+      //let longitud = ;
+      let longapp = Object.keys(courses[key].videos).length;
+     
+      if(this.pagesApp[key].pages.length < longapp){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  static percentageEachApp() {
+    let totalPercentage = [];
+    //const Videos = courses[State.getCurrentApp()].videos;
+    for (let key in  courses) {
+      let longapp = Object.keys(courses[key].videos).length;
+      totalPercentage[key]=parseInt(this.pagesApp[key].pages.length*100/longapp,10);
+    }
+
+    return totalPercentage;
   }
 
 
