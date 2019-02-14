@@ -4,17 +4,22 @@ import courses from '../data/courses';
 export default class {
 
   constructor() {
-    this.pagesApp = [/*{app: 0 pages: [],lastPage: 0},*/];
+    this.debug=false;
+    this.unloaded = false;
+    this.pagesApp = [/*{app: 0 pages: [],videoview[],lastPage: 0},*/];
     this.currentApp = 0;
     this.generateTemplate = {};
   }
 
   static init() {
+    this.debug=true;
+    this.unloaded = false;
     this.pagesApp = [];
     for (let key in  courses) {
       this.pagesApp.push({
         app: parseInt(key),
         pages: [],
+        videoview: [],
         lastPage: 0
       });
     }
@@ -36,7 +41,7 @@ export default class {
   }
   
 
-
+  
   static setPagesApp(app, page = 0, lastpage = 0) {
     const _self = this;
     this.currentApp = app;
@@ -46,6 +51,19 @@ export default class {
             apps.pages.push(parseInt(page));
           }
           apps.lastPage = parseInt(lastpage);
+      }
+    });
+
+}
+
+  static setViewedVideoApp(app, page = 0, lastpage = 0) {
+    const _self = this;
+    this.currentApp = app;
+    this.pagesApp.map(function (apps) {
+      if (apps.app == app) {
+        if(!apps.videoview.includes(parseInt(page))){
+            apps.videoview.push(parseInt(page));
+          }
       }
     });
 
@@ -88,7 +106,7 @@ export default class {
     const app = this.pagesApp.find(function (apps) {
       return apps.app == currentApp;
     });
-    return app.pages.includes(parseInt(id));
+    return app.videoview.includes(parseInt(id));
   }
 
   static getPagesVisited() {
@@ -99,6 +117,14 @@ export default class {
     return app.pages.length;
   }
 
+  static getVideosViewed() {
+    const currentApp = this.currentApp;
+    const app = this.pagesApp.find(function (apps) {
+      return apps.app == currentApp;
+    });
+    return app.videoview.length;
+  }
+
   static isFinishedCourse() {
     
     //const Videos = courses[State.getCurrentApp()].videos;
@@ -106,7 +132,7 @@ export default class {
       //let longitud = ;
       let longapp = Object.keys(courses[key].videos).length;
      
-      if(this.pagesApp[key].pages.length < longapp){
+      if(this.pagesApp[key].videoview.length < longapp){
         return false;
       }
     }
@@ -118,7 +144,7 @@ export default class {
     //const Videos = courses[State.getCurrentApp()].videos;
     for (let key in  courses) {
       let longapp = Object.keys(courses[key].videos).length;
-      totalPercentage[key]=parseInt(this.pagesApp[key].pages.length*100/longapp,10);
+      totalPercentage[key]=parseInt(this.pagesApp[key].videoview.length*100/longapp,10);
     }
 
     return totalPercentage;

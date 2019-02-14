@@ -15,8 +15,9 @@ export default function () {
       Span2 = document.createElement('span'),
       Div = document.createElement('div');
 
-
-    Li.setAttribute('class', 'row middle-items');
+      Link.setAttribute('id','menu-video-'+key)
+      Span.setAttribute('id','number-video-'+key)
+      Li.setAttribute('class', 'row middle-items');
 
 
     Div.setAttribute('class', 'row Nav-border middle-items');

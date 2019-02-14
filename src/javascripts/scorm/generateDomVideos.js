@@ -1,13 +1,14 @@
 import State from './State';
 import courses from '../data/courses';
 
-
 export default function () {
 
   const app = State.getCurrentApp(),
     page = State.getLastPageCurrentApp(),
-    course = courses[app].videos[page];
-
+    course = courses[app].videos[page],
+    VideoContainter = document.getElementById('MyVideo');
+  
+  console.log("Pagina"+page);
   document.getElementById('Course-title').innerText = course.name;
   const linkBack =  document.getElementById('linkBack');
   const linkAfter =  document.getElementById('linkAfter');
@@ -34,9 +35,10 @@ export default function () {
     linkAfter.classList.add('disabled')
   }
 
-
+  VideoContainter.setAttribute('data-idvideo',parseInt(page));
   document.getElementById('Course-video')
-    .setAttribute('src', course.src);
+    .setAttribute('src', 'https://drive.google.com/uc?export=download&id='+course.src);
   document.getElementById('Course-content').innerHTML = course.content;
+  
 }
 

@@ -20,8 +20,9 @@ export default "<section class=\"MenuBar\">\n" +
 "    <h1 id='Course-title'></h1>\n" +
 "    <div class=\"row Course-video\">\n" +
 "        <div class=\"col-l-10 col-m-10 col-16\">\n" +
-"            <iframe id='Course-video' src=\"https://drive.google.com/file/d/1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2/preview\"\n" +
-"                    frameborder=\"0\" width=\"100%\" height=\"400px\"></iframe>\n" +
+"			 <video widht='100%' id='MyVideo' controls='controls'>" +
+"				<source id='Course-video' src='https://drive.google.com/uc?export=download&id=1p-o89ntkQadfQXw9pz5vlQxPVcdNaTD2' type='video/mp4'/>"+
+"			</video>"+
 "        </div>\n" +
 "        <div id='linkBack' class=\"col-l-3 col-m-3 col-8  Course-arrow Course-arrowLeft row middle-items\">\n" +
 "            <div class=\"row middle-items justify-center is-full-width\">\n" +

@@ -1,4 +1,5 @@
 import State from './State';
+import generateVideoListener from './generateVideoListener';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
 import generatePercentage from './generatePercentage';
@@ -7,28 +8,25 @@ import {
   ScormProcessInitialize,
   ScormProcessGetValue,
   ScormProcessSetValue,
-  ScormProcessCommit
+  ScormProcessCommit,
+  ScormProcessTerminate
 } from './ScormFunction';
-
-let debug=false;
-let unloaded = false;
-
-
 
 export default class {
 
   constructor() {
+
+    State.setTemplate(document.getElementById('MainContainer'));
+    State.init(); 
+
     window.addEventListener("beforeunload", this.myScript);
     window.addEventListener("unload", this.myScript);      
+   
     
-
-    if(!debug){
+    if(!State.debug){
 
       ScormProcessInitialize();
         
-      State.setTemplate(document.getElementById('MainContainer'));
-      State.init();  
-
       let startTimeStamp = new Date();
       let suspend_data = "";
       let completionStatus = ScormProcessGetValue("cmi.completion_status", true);
@@ -40,18 +38,12 @@ export default class {
           suspend_data = State.stateToString();
           console.log(suspend_data);
           ScormProcessSetValue("cmi.suspend_data", suspend_data);
-          ScormProcessSetValue("cmi.location", 1);
+          ScormProcessSetValue("cmi.success_status", "unknown");
           ScormProcessCommit();
-
           }else{
             suspend_data = ScormProcessGetValue("cmi.suspend_data", false);
             State.stringToState(suspend_data);
           }
-
-        
-      }else{
-        State.setTemplate(document.getElementById('MainContainer'));
-        State.init();  
       }
 
     this.generatetemplate = State.getGenerateTemplate();
@@ -62,12 +54,11 @@ export default class {
 
 
   myScript(event){
-    console.log("uNLOAD");
-    if(!unloaded){
+    if(!State.unloaded){
               ScormProcessSetValue("cmi.exit", "suspend");
               ScormProcessCommit();
               ScormProcessTerminate();
-              unloaded = true;
+              State.unloaded = true;
            }
            return null;
     }
@@ -84,12 +75,6 @@ export default class {
         const idApp = item.dataset.idapp;
         State.setPagesApp(idApp);
 
-        if(!debug){
-        let suspend_data = State.stateToString();
-        console.log(suspend_data);
-        ScormProcessSetValue("cmi.suspend_data", suspend_data);
-        ScormProcessCommit();}
-        _self.isScormCompleted();
 
         _self.generatetemplate.loadTemplate(idApp);
         const links = generateMenuVideos();
@@ -99,6 +84,7 @@ export default class {
         _self.clickLinkAppCourse();
         _self.clickArrows();
         _self.clickLinkMainButton();
+        generateVideoListener();
       });
     });
   }
@@ -125,14 +111,6 @@ export default class {
         State.setPagesApp(State.currentApp, idVideo, idVideo);
 
 
-      if(!debug){
-        let suspend_data = State.stateToString();
-        console.log(suspend_data);
-        ScormProcessSetValue("cmi.suspend_data", suspend_data);
-        ScormProcessCommit();
-      }
-      _self.isScormCompleted();
-
         _self.generatetemplate.loadTemplate(idVideo);
         const links = generateMenuVideos();
         _self.clickLinkVideos(links, _self);
@@ -142,6 +120,7 @@ export default class {
         _self.clickLinkAppCourse();
         _self.clickArrows();
         _self.clickLinkMainButton();
+        generateVideoListener();
       });
     });
   }
@@ -159,15 +138,6 @@ export default class {
           let lastpage = State.getLastPageCurrentApp();
           State.setPagesApp(idApp, lastpage, lastpage);
 
-        if(!debug){
-          let suspend_data = State.stateToString();
-        console.log(suspend_data);
-        ScormProcessSetValue("cmi.suspend_data", suspend_data);
-        ScormProcessCommit();
-      }
-     _self.isScormCompleted();
-
-
           _self.generatetemplate.loadTemplate(1);
           _self.generatetemplate.menuVideos();
           const links = generateMenuVideos();
@@ -177,6 +147,7 @@ export default class {
           _self.clickLinkAppCourse();
           _self.clickArrows();
           _self.clickLinkMainButton();
+          generateVideoListener();
         });
       });
   }
@@ -190,13 +161,6 @@ export default class {
           const idVideo = item.dataset.idvideo;
           State.setPagesApp(State.currentApp, idVideo, idVideo);
 
-      if(!debug){
-          let suspend_data = State.stateToString();
-        console.log(suspend_data);
-        ScormProcessSetValue("cmi.suspend_data", suspend_data);
-        ScormProcessCommit();
-      }
-      _self.isScormCompleted();
 
           _self.generatetemplate.loadTemplate(1);
           _self.generatetemplate.menuVideos();
@@ -207,20 +171,13 @@ export default class {
           _self.clickLinkAppCourse();
           _self.clickArrows();
           _self.clickLinkMainButton();
+          generateVideoListener();
         });
       });
 
 
   }
 
-  isScormCompleted () {
-    if(State.isFinishedCourse()){
-      console.log("scormcompleted");
-      ScormProcessSetValue("cmi.completion_status", "completed");
-      if(!debug)
-      ScormProcessCommit();
-    }
-  }
-
+  
 
 }
