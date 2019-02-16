@@ -20,7 +20,8 @@ export default function () {
       menulink.classList.add('visited');
       numberlink.classList.add('visited');
       generatePercentage();
-      let menuAppInnerPage = generateMenuAppsInnerPage();
+      //let menuAppInnerPage = generateMenuAppsInnerPage();
+
       console.log(State.pagesApp)
       if(!State.debug){
           let suspend_data = State.stateToString();
@@ -32,10 +33,8 @@ export default function () {
             console.log("scormcompleted");
             ScormProcessSetValue("cmi.completion_status", "completed");
             ScormProcessSetValue("cmi.success_status", "passed");
-            if(!State.debug)
             ScormProcessCommit();
           }
       }
-        //alert("Hola terminé");
     }
   }

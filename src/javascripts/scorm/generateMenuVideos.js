@@ -30,11 +30,6 @@ export default function () {
     }
     Link.setAttribute('href', '#');
 
-
-
-
-
-
     Span.innerText = parseInt(key) + 1;
     Div.appendChild(Span);
 

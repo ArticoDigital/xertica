@@ -1,5 +1,5 @@
 import State from './State';
-import generateVideoListener from './generateVideoListener';
+//import generateVideoListener from './generateVideoListener';
 import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
 import generatePercentage from './generatePercentage';
@@ -19,8 +19,8 @@ export default class {
     State.setTemplate(document.getElementById('MainContainer'));
     State.init(); 
 
-    window.addEventListener("beforeunload", this.myScript);
-    window.addEventListener("unload", this.myScript);      
+    window.addEventListener("beforeunload", this.BeforeClose);
+    window.addEventListener("unload", this.BeforeClose);      
    
     
     if(!State.debug){
@@ -52,8 +52,7 @@ export default class {
     this.clickLinkApp(links);
   }
 
-
-  myScript(event){
+  BeforeClose(event){
     if(!State.unloaded){
               ScormProcessSetValue("cmi.exit", "suspend");
               ScormProcessCommit();
@@ -67,7 +66,6 @@ export default class {
   clickLinkApp(links) {
     window.scrollTo(0, 0);
     const _self = this;
-
 
     links.forEach(function (item) {
       item.addEventListener('click', function (e) {
@@ -84,10 +82,15 @@ export default class {
         _self.clickLinkAppCourse();
         _self.clickArrows();
         _self.clickLinkMainButton();
-        generateVideoListener();
+        //generateVideoListener();
+          document.getElementById('MyVideo').addEventListener('ended',function() {
+              _self.EndedVideo(_self);
+          });
+        
       });
     });
   }
+
 
   clickLinkMainButton(){
     const _self = this;
@@ -120,13 +123,19 @@ export default class {
         _self.clickLinkAppCourse();
         _self.clickArrows();
         _self.clickLinkMainButton();
-        generateVideoListener();
+        //generateVideoListener();
+        document.getElementById('MyVideo').addEventListener('ended',function() {
+              _self.EndedVideo(_self);
+          });
       });
     });
   }
+  
+ 
+    
+
 
   clickLinkAppCourse() {
-    window.scrollTo(0, 0);
     const _self = this;
     document.querySelectorAll('.Menu-courseLink')
       .forEach(function (item) {
@@ -147,7 +156,10 @@ export default class {
           _self.clickLinkAppCourse();
           _self.clickArrows();
           _self.clickLinkMainButton();
-          generateVideoListener();
+          //generateVideoListener();
+           document.getElementById('MyVideo').addEventListener('ended',function() {
+              _self.EndedVideo(_self);
+          });
         });
       });
   }
@@ -171,12 +183,43 @@ export default class {
           _self.clickLinkAppCourse();
           _self.clickArrows();
           _self.clickLinkMainButton();
-          generateVideoListener();
+          document.getElementById('MyVideo').addEventListener('ended',function() {
+              _self.EndedVideo(_self);
+          });
+          
         });
       });
 
 
   }
+
+  EndedVideo(_self) {
+      
+      State.setViewedVideoApp(State.getCurrentApp(),State.getLastPageCurrentApp(),State.getLastPageCurrentApp());
+      let menulink = document.getElementById('menu-video-'+State.getLastPageCurrentApp());
+      let numberlink = document.getElementById('number-video-'+State.getLastPageCurrentApp());
+      menulink.classList.add('visited');
+      numberlink.classList.add('visited');
+      generatePercentage();
+      let menuAppInnerPage = generateMenuAppsInnerPage();
+      
+      _self.clickLinkAppCourse();
+      
+      console.log(State.pagesApp)
+      if(!State.debug){
+          let suspend_data = State.stateToString();
+          console.log(suspend_data);
+          
+          ScormProcessSetValue("cmi.suspend_data", suspend_data);
+          ScormProcessCommit();
+          if(State.isFinishedCourse()){
+            console.log("scormcompleted");
+            ScormProcessSetValue("cmi.completion_status", "completed");
+            ScormProcessSetValue("cmi.success_status", "passed");
+            ScormProcessCommit();
+          }
+      }
+    }
 
   
 

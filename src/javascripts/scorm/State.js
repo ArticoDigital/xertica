@@ -12,7 +12,7 @@ export default class {
   }
 
   static init() {
-    this.debug=true;
+    this.debug=false;
     this.unloaded = false;
     this.pagesApp = [];
     for (let key in  courses) {
