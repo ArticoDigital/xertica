@@ -4,13 +4,15 @@ import generateMenuApps from './generateMenuApps';
 import generateMenuVideos from './generateMenuVideos';
 import generatePercentage from './generatePercentage';
 import generateMenuAppsInnerPage from  './generateMenuAppsInnerPage';
-import {
+import Scorm from './ScormApiWrapper';
+import swal from 'sweetalert2';
+/*import {
   ScormProcessInitialize,
   ScormProcessGetValue,
   ScormProcessSetValue,
   ScormProcessCommit,
   ScormProcessTerminate
-} from './ScormFunction';
+} from './ScormFunction';*/
 
 export default class {
 
@@ -20,30 +22,59 @@ export default class {
     State.init(); 
 
     window.addEventListener("beforeunload", this.BeforeClose);
-    window.addEventListener("unload", this.BeforeClose);      
+    window.addEventListener("unload", this.BeforeClose);   
+
+    Scorm.initScormObj();
    
-    
+   //console.log(Scorm.pipwerks);
+    let scormobj = Scorm.pipwerks.SCORM;
+    console.log(scormobj);
     if(!State.debug){
 
-      ScormProcessInitialize();
-        
-      let startTimeStamp = new Date();
+      //ScormProcessInitialize();
+      scormobj.version = "1.2";
+      //alert(scormobj.version);
+      let callSucceeded = scormobj.init();
+      console.log("callSucceeded");
+      console.log(callSucceeded);
+      //let startTimeStamp = new Date();
       let suspend_data = "";
-      let completionStatus = ScormProcessGetValue("cmi.completion_status", true);
-      console.log(completionStatus);
-        if (completionStatus == "unknown" || completionStatus == "" || completionStatus == null) {
-          completionStatus = "incomplete";
-          ScormProcessSetValue("cmi.completion_status", completionStatus);
-          ScormProcessCommit();
-          suspend_data = State.stateToString();
-          console.log(suspend_data);
-          ScormProcessSetValue("cmi.suspend_data", suspend_data);
-          ScormProcessSetValue("cmi.success_status", "unknown");
-          ScormProcessCommit();
+      //let completionStatus = ScormProcessGetValue("cmi.completion_status", true);
+      if(callSucceeded){
+            let lesson_location_init = scormobj.get("cmi.core.lesson_location");
+             //alert("Lesson location: "+lesson_location_init);
+            if (lesson_location_init == "unknown" || lesson_location_init == "" || lesson_location_init == null) {  //Si es primera vez que accede lesson location es vacio
+                //alert("Entro a generar suspend data");
+                    //completionStatus = "incomplete";
+                    suspend_data = State.stateToString();
+                    console.log(suspend_data);
+                    scormobj.set("cmi.core.lesson_location", 1);
+                    scormobj.set("cmi.suspend_data", suspend_data);
+                    scormobj.save();
+            }
+            else {
+                suspend_data = scormobj.get('cmi.suspend_data')
+                State.stringToState(suspend_data);                
+            }
           }else{
-            suspend_data = ScormProcessGetValue("cmi.suspend_data", false);
-            State.stringToState(suspend_data);
+            swal.fire("Aviso","No conectado, puede navegar pero no se guardará su progreso.",'warning');
           }
+
+
+
+        //if (completionStatus == "unknown" || completionStatus == "" || completionStatus == null) {
+         // completionStatus = "incomplete";
+         // ScormProcessSetValue("cmi.completion_status", completionStatus);
+         // ScormProcessCommit();
+         // suspend_data = State.stateToString();
+         // console.log(suspend_data);
+         // ScormProcessSetValue("cmi.suspend_data", suspend_data);
+          //ScormProcessSetValue("cmi.success_status", "unknown");
+          //ScormProcessCommit();
+         // }else{
+          //  suspend_data = ScormProcessGetValue("cmi.suspend_data", false);
+           // State.stringToState(suspend_data);
+          //}
       }
 
     this.generatetemplate = State.getGenerateTemplate();
@@ -54,9 +85,12 @@ export default class {
 
   BeforeClose(event){
     if(!State.unloaded){
-              ScormProcessSetValue("cmi.exit", "suspend");
-              ScormProcessCommit();
-              ScormProcessTerminate();
+              let scormobj = Scorm.pipwerks.SCORM;
+              scormobj.save();
+              scormobj.quit(); 
+              //ScormProcessSetValue("cmi.exit", "suspend");
+              //ScormProcessCommit();
+              //ScormProcessTerminate();
               State.unloaded = true;
            }
            return null;
@@ -64,11 +98,12 @@ export default class {
   
  
   clickLinkApp(links) {
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     const _self = this;
 
     links.forEach(function (item) {
       item.addEventListener('click', function (e) {
+        window.scrollTo(0, 0);
         e.preventDefault();
         const idApp = item.dataset.idapp;
         State.setPagesApp(idApp);
@@ -141,6 +176,7 @@ export default class {
       .forEach(function (item) {
         item.addEventListener('click', function (e) {
           e.preventDefault();
+          window.scrollTo(0, 0);
           let idApp = item.dataset.appid;
 
           State.setCurrentApp(idApp);
@@ -204,19 +240,34 @@ export default class {
       let menuAppInnerPage = generateMenuAppsInnerPage();
       
       _self.clickLinkAppCourse();
+      swal.fire("Has visto la totalidad del video.","Continúa navegando el curso.",'success');
+      
       
       console.log(State.pagesApp)
       if(!State.debug){
           let suspend_data = State.stateToString();
           console.log(suspend_data);
           
-          ScormProcessSetValue("cmi.suspend_data", suspend_data);
-          ScormProcessCommit();
+          //ScormProcessSetValue("cmi.suspend_data", suspend_data);
+          //ScormProcessCommit();
+          let scormobj = Scorm.pipwerks.SCORM;
+          scormobj.set("cmi.suspend_data", suspend_data);
+          scormobj.save();
+          if(State.isFinishedModule() && !State.alertModule.includes(parseInt(State.currentApp))){
+//if(!this.alertModule.includes(parseInt(currentApp))){
+            State.alertModule.push(parseInt(State.currentApp));
+ //         }
+
+            swal.fire("¡Felicitaciones!","Has visto el contenido de esta aplicación. Continúa navegando.",'success');
+          }
           if(State.isFinishedCourse()){
             console.log("scormcompleted");
-            ScormProcessSetValue("cmi.completion_status", "completed");
-            ScormProcessSetValue("cmi.success_status", "passed");
-            ScormProcessCommit();
+            swal.fire("¡Felicitaciones!","Has visto todo el contenido de este nivel.",'success');
+            scormobj.set("cmi.core.lesson_status", "completed");
+            scormobj.save();
+//            ScormProcessSetValue("cmi.completion_status", "completed");
+            //ScormProcessSetValue("cmi.success_status", "passed");
+            //ScormProcessCommit();
           }
       }
     }

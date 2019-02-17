@@ -1,12 +1,13 @@
 import State from './State';
 import generatePercentage from './generatePercentage';
 import generateMenuAppsInnerPage from  './generateMenuAppsInnerPage';
-import {
+import Scorm from './ScormApiWrapper';
+/*import {
   ScormProcessInitialize,
   ScormProcessGetValue,
   ScormProcessSetValue,
   ScormProcessCommit
-} from './ScormFunction';
+} from './ScormFunction';*/
 
 
 export default function () {
@@ -26,14 +27,22 @@ export default function () {
       if(!State.debug){
           let suspend_data = State.stateToString();
           console.log(suspend_data);
-          
-          ScormProcessSetValue("cmi.suspend_data", suspend_data);
-          ScormProcessCommit();
+          let scormobj = Scorm.pipwerks.SCORM;
+
+          scormobj.set("cmi.suspend_data", suspend_data);
+          scormobj.save();
+
+          /*ScormProcessSetValue("cmi.suspend_data", suspend_data);
+          ScormProcessCommit();*/
           if(State.isFinishedCourse()){
             console.log("scormcompleted");
-            ScormProcessSetValue("cmi.completion_status", "completed");
-            ScormProcessSetValue("cmi.success_status", "passed");
-            ScormProcessCommit();
+
+            scormobj.set("cmi.core.lesson_status", "completed");
+            scormobj.save();
+
+            //ScormProcessSetValue("cmi.completion_status", "completed");
+            //ScormProcessSetValue("cmi.success_status", "passed");
+            //ScormProcessCommit();
           }
       }
     }

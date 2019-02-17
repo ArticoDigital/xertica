@@ -4,8 +4,9 @@ import courses from '../data/courses';
 export default class {
 
   constructor() {
-    this.debug=false;
-    this.unloaded = false;
+    this.debug;
+    this.unloaded;
+    this.alertModule =[];
     this.pagesApp = [/*{app: 0 pages: [],videoview[],lastPage: 0},*/];
     this.currentApp = 0;
     this.generateTemplate = {};
@@ -14,6 +15,7 @@ export default class {
   static init() {
     this.debug=false;
     this.unloaded = false;
+    this.alertModule =[];
     this.pagesApp = [];
     for (let key in  courses) {
       this.pagesApp.push({
@@ -137,6 +139,18 @@ export default class {
       }
     }
     return true;
+  }
+
+  static isFinishedModule() {
+
+    const currentApp = this.currentApp;
+     let longapp = Object.keys(courses[currentApp].videos).length;
+     
+      if(this.pagesApp[currentApp].videoview.length == longapp){
+        
+        return true;
+      }
+    return false;
   }
 
   static percentageEachApp() {
