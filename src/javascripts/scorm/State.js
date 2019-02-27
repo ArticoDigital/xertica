@@ -108,7 +108,7 @@ export default class {
     const app = this.pagesApp.find(function (apps) {
       return apps.app == currentApp;
     });
-    return app.videoview.includes(parseInt(id));
+    return app.pages.includes(parseInt(id));
   }
 
   static getPagesVisited() {
@@ -134,7 +134,7 @@ export default class {
       //let longitud = ;
       let longapp = Object.keys(courses[key].videos).length;
      
-      if(this.pagesApp[key].videoview.length < longapp){
+      if(this.pagesApp[key].pages.length < longapp){
         return false;
       }
     }
@@ -146,7 +146,7 @@ export default class {
     const currentApp = this.currentApp;
      let longapp = Object.keys(courses[currentApp].videos).length;
      
-      if(this.pagesApp[currentApp].videoview.length == longapp){
+      if(this.pagesApp[currentApp].pages.length == longapp){
         
         return true;
       }
@@ -158,7 +158,7 @@ export default class {
     //const Videos = courses[State.getCurrentApp()].videos;
     for (let key in  courses) {
       let longapp = Object.keys(courses[key].videos).length;
-      totalPercentage[key]=parseInt(this.pagesApp[key].videoview.length*100/longapp,10);
+      totalPercentage[key]=parseInt(this.pagesApp[key].pages.length*100/longapp,10);
     }
 
     return totalPercentage;

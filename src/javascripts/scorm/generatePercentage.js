@@ -5,13 +5,13 @@ export default function () {
 
    const Pages = courses[State.getCurrentApp()].videos;
  
-  const VideosViewed = State.getVideosViewed();
+  const PagesVisited = State.getPagesVisited();
   let size = Object.keys(Pages).length;
   let percetageperpage=parseInt(100/size,10);
-  let totalpercentage = parseInt(VideosViewed*100/size,10)
+  let totalpercentage = parseInt(PagesVisited*100/size,10)
   const  PercentageUI = document.getElementById('PercentageUI');
   PercentageUI.innerHTML = "";
-  let actualpercentage = VideosViewed*percetageperpage;
+  let actualpercentage = PagesVisited*percetageperpage;
   
   for (let key in Pages) {
     let mult=Number(key)+1;
@@ -30,7 +30,7 @@ export default function () {
 
   }
 
-  return VideosViewed;
+  return PagesVisited;
 
 }
 

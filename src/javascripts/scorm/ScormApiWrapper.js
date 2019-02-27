@@ -114,6 +114,7 @@ export default class {
 						} else {
 
 							trace(traceMsgPrefix +": SCORM version 2004 was specified by user, but API_1484_11 cannot be found.");
+							console.log(traceMsgPrefix +": SCORM version 2004 was specified by user, but API_1484_11 cannot be found.");
 
 						}
 
@@ -128,6 +129,7 @@ export default class {
 						} else {
 
 							trace(traceMsgPrefix +": SCORM version 1.2 was specified by user, but API cannot be found.");
+							console.log(traceMsgPrefix +": SCORM version 1.2 was specified by user, but API cannot be found.");
 
 						}
 
@@ -159,6 +161,7 @@ export default class {
 			} else {
 				
 				trace(traceMsgPrefix +": Error finding API. \nFind attempts: " +findAttempts +". \nFind attempt limit: " +findAttemptLimit);
+				console.log(traceMsgPrefix +": Error finding API. \nFind attempts: " +findAttempts +". \nFind attempt limit: " +findAttemptLimit);
 				
 			}
 
@@ -203,6 +206,7 @@ export default class {
 			} else {
 
 				trace("API.get failed: Can't find the API!");
+				console.log("API.get failed: Can't find the API!");
 
 			}
 
@@ -222,6 +226,8 @@ export default class {
 		this.pipwerks.SCORM.API.getHandle = function() {
 
 			let API = _self.pipwerks.SCORM.API;
+			console.log("GET HANDLE 229, return API.handle");
+			console.log(API);
 
 			if(!API.handle && !API.isFound){
 
@@ -263,28 +269,38 @@ export default class {
 
 					let API = scorm.API.getHandle(),
 					errorCode = 0;
+					console.log("Get handle API");
+					console.log(API);
 
 					if(API){
-
+						console.log("ENTEREDAPI");
 						switch(scorm.version){
-							case "1.2" : success = makeBoolean(API.LMSInitialize("")); break;
+							case "1.2" : success = makeBoolean(API.LMSInitialize("")); console.log("Case 1.2"); break;
 							case "2004": success = makeBoolean(API.Initialize("")); break;
 						}
 
 						if(success){
+							console.log("Success connection");
 
 						//Double-check that connection is active and working before returning 'true' boolean
 						errorCode = debug.getCode();
+						console.log("Errorcode");
+						console.log(errorCode);
 						
 						if(errorCode !== null && errorCode === 0){
 							
 							scorm.connection.isActive = true;
 							
 							if(scorm.handleCompletionStatus){
+
+								console.log("scorm.handleCompletionStatus");
 								
 								//Automatically set new launches to incomplete 
+
 								completionStatus = _self.pipwerks.SCORM.status("get");
-								
+
+								console.log("STATUS");
+								console.log(completionStatus);
 								if(completionStatus){
 
 									switch(completionStatus){
@@ -311,7 +327,9 @@ export default class {
 						} else {
 							
 							success = false;
+							console.log("1"+traceMsgPrefix +"failed. \nError code: " +errorCode +" \nError info: " +debug.getInfo(errorCode));
 							trace(traceMsgPrefix +"failed. \nError code: " +errorCode +" \nError info: " +debug.getInfo(errorCode));
+
 							
 						}
 
@@ -320,24 +338,25 @@ export default class {
 						errorCode = debug.getCode();
 
 						if(errorCode !== null && errorCode !== 0){
-
+							console.log("2"+traceMsgPrefix +"failed. \nError code: " +errorCode +" \nError info: " +debug.getInfo(errorCode));
 							trace(traceMsgPrefix +"failed. \nError code: " +errorCode +" \nError info: " +debug.getInfo(errorCode));
 							
 						} else {
 							
+							console.log("3"+traceMsgPrefix +"failed: No response from server.");
 							trace(traceMsgPrefix +"failed: No response from server.");
 
 						}
 					}
 
 				} else {
-
+					console.log("4"+traceMsgPrefix +"failed: API is null.");
 					trace(traceMsgPrefix +"failed: API is null.");
 
 				}
 
 			} else {
-
+				console.log("5"+traceMsgPrefix +"aborted: Connection already active.");
 				trace(traceMsgPrefix +"aborted: Connection already active.");
 
 			}
